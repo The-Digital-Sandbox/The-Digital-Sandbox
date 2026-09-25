@@ -42,9 +42,13 @@ per-product token gating for a storefront. Contract address, token ID and chain,
 live to the collection, with a shopper preview of what a holder and a non-holder each
 see. Vite, React, TypeScript, Tailwind v4.
 
-**Crimson Desert mod loader** (private): a C++17 DLL that hooks the game's file API so
-modded files load without repacking the archives, plus a decoder for the engine's
-undocumented texture format. First use: swapping the game's dragon for Drogon.
+**[crimson-desert-got-dragon-mod](https://github.com/The-Digital-Sandbox/crimson-desert-got-dragon-mod)**:
+reverse engineering an undocumented skinned-mesh format. The engine does not store 3D
+positions at all; the vertex shader reconstructs them from quantised bytes and a
+per-submesh bounding box, found by tracing a draw in PIX and reading the DXIL. A codec
+that decodes and re-encodes the format, patchers that redirect assets without touching
+game files, and CPU replays of the shader stages checked against the capture. The C++
+loader DLL that hooks the game's file API lives in a separate repo.
 
 **Thursday** (private): a personal assistant that answers on WhatsApp from a memory it
 maintains itself, and runs the day to day of the company from a command centre.
