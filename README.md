@@ -28,19 +28,73 @@ from Manchester. [wael@thedigitalsandbox.co.uk](mailto:wael@thedigitalsandbox.co
 
 ---
 
+### Products
+
 **[Spondula](https://spondula.com)**: send to any S-Handle instead of account numbers,
 sort codes, IBANs or wallet addresses. Transfers between S-Handles on the Spondula
-network are free. Web, iOS and Android, one network.
+network are free. Nine repos: the web wallet, the gateway, the admin console, a merchant
+gateway, the status page, an article studio, the iOS app, the Android app and the ledger.
+Plus a motion kit in Remotion whose compositions are prop-driven templates, so a corridor
+teaser is rendered from data rather than re-edited.
 
-**[Fincore.AI](https://github.com/The-Digital-Sandbox/Fincore.AI)**: design prototype
-for a fintech app that reads your Big Five personality profile and reframes spending
-decisions through it. 32 screens in Next.js. The splash is rendered to video by Remotion
-from the same component that draws it in the app, so the two can never disagree.
+**The Digital Sandbox** (private, live at [thedigitalsandbox.co.uk](https://thedigitalsandbox.co.uk)):
+a customer-messaging platform for small businesses. Embeddable chat widget, campaigns
+and flows, Meta integrations for Facebook, Instagram and WhatsApp, and a React Native
+companion app. Next.js, deployed on Google Cloud.
+
+**Autotube** (private): a multi-tenant short-video generator. Brand configuration drives
+the Remotion compositions, so one video engine serves every tenant with their own fonts,
+colours and presenter overlays. Tenant-scoped data rules, a render job queue, and a
+generic reel composition fed by scene data.
+
+**DigiSkale** (private, team project): a Flutter social app on Firebase, posts, stories,
+follows and notifications. My part is the posting and profile features and the data
+rules behind them.
+
+**[Fincore](https://github.com/The-Digital-Sandbox/Fincore.AI)**: design prototype for
+a fintech app that reads your Big Five personality profile and reframes spending
+decisions through it. 38 screens in Next.js and an Expo twin. The splash is rendered to
+video by Remotion from the same component that draws it in the app, so the two can never
+disagree.
 
 **[token-gating-admin](https://github.com/The-Digital-Sandbox/token-gating-admin)**:
 per-product token gating for a storefront. Contract address, token ID and chain, resolved
 live to the collection, with a shopper preview of what a holder and a non-holder each
 see. Vite, React, TypeScript, Tailwind v4.
+
+### Agents, libraries and tooling
+
+**Thursday** (private): a personal chief of staff that answers on WhatsApp and email from
+a memory it maintains itself. A Node server with a React ops deck, a headless CLI runner
+for the model with per-thread session continuity, and nightly routines that walk the
+day's session captures into atoms, reconcile duplicate entities, and link and abstract
+the notes into a graph. Morning brief, end-of-day review and an obligation ledger on top.
+
+**[vault-brain](https://github.com/The-Digital-Sandbox/vault-brain)**: Thursday's memory
+pipeline released on its own. Three nightly stages over a markdown vault: walk session
+captures into typed atoms on entity notes, reconcile duplicate entities and repoint every
+wikilink, then type the relationships between notes and promote well-connected ones into
+insight hubs. Ledgers make every stage idempotent, a budget governor can skip a night,
+and the model is any command that reads a prompt on stdin. No dependencies, 51 tests.
+
+**[sr25519-uniffi](https://github.com/The-Digital-Sandbox/sr25519-uniffi)**: one Rust
+crate for BIP39 mnemonics, sr25519 key derivation, signing, verification and SS58
+addresses, exposed to Swift and Kotlin through UniFFI so an iOS app and an Android app
+share one implementation of the maths instead of two ports that drift. The golden vector
+is pinned at three layers and the signature path is cross-checked against the reference
+JavaScript implementation in both directions.
+
+**Hermes Mobile** (private): a platform adapter and Android app that make a phone a
+first-class channel for an open-source agent framework. Python plugin, push
+notifications, and speech synthesised on send so replies arrive as audio. Kotlin and
+Compose chat console. 43 plugin tests and 20 app tests.
+
+**Pixel Agents fork** (private): a fork of a VS Code extension that draws running coding
+agents as pixel characters in an office. Added a tower view that stacks workspaces as
+floors, tool-name pills above subagents, and a sticky fade on stop so short-lived agents
+are visible at all.
+
+### Reverse engineering and hardware
 
 **[crimson-desert-got-dragon-mod](https://github.com/The-Digital-Sandbox/crimson-desert-got-dragon-mod)**:
 reverse engineering an undocumented skinned-mesh format. The engine does not store 3D
@@ -50,8 +104,10 @@ that decodes and re-encodes the format, patchers that redirect assets without to
 game files, and CPU replays of the shader stages checked against the capture. The C++
 loader DLL that hooks the game's file API lives in a separate repo.
 
-**Thursday** (private): a personal assistant that answers on WhatsApp from a memory it
-maintains itself, and runs the day to day of the company from a command centre.
+**BD-1** (in progress): a desk-scale walking companion droid. Twelve bus servos, five per
+leg plus head pan and tilt, one IMU, printed PETG spars on bought metal brackets, with
+the fan-made shell used as cladding only. Walking chosen over wheels on purpose, because
+the character is the point. Radio control first, voice later.
 
 ---
 
